@@ -1,0 +1,45 @@
+
+<!DOCTYPE html> 
+<html>
+<head>
+    <title>Flashcard Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Flashcard Generator</h1>
+
+   <div class="f"><textarea id="qaInput" placeholder="Enter Question - Answer&#10;Example: What is Python? - A programming language"></textarea>
+
+    <button id="generateBtn">Generate Flashcards</button><button id="quizBtn">Start Quiz</button></div> 
+
+    <div id="progressContainer" class="hidden">
+        <div id="progressBar"></div>
+    </div>
+
+
+    <div id="flashcardContainer" class="hidden">
+        <div id="flashcard" class="card">
+            <div class="front" id="question"></div>
+            <div class="back" id="answer"></div>
+        </div>
+
+        <button id="prevBtn">Previous</button>
+        <button id="flipBtn">Flip</button>
+        <button id="nextBtn">Next</button>
+        <button id="shuffleBtn">Shuffle</button>
+    </div>
+    <div id="quizContainer" class="hidden">
+    <h2>Quiz Mode</h2>
+    <div id="quizQuestion"></div>
+
+    <input type="text" id="quizAnswerInput" placeholder="Type your answer here">
+    <button id="submitQuizAnswer">Submit</button>
+
+    <p id="quizFeedback"></p>
+    <p id="quizScore"></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
